@@ -2,10 +2,19 @@ import React from "react"
 import { Route, IndexRoute } from "react-router"
 import App from "./components/app"
 import PostsIndex from "./components/posts_index"
+import PostsNew from "./components/posts_new"
+import PostsShow from "./components/posts_show"
 
 export default (
 <Route path="/" component={App}>
-<IndexRoute component={PostsIndex} />
+  <IndexRoute component={PostsIndex} />
+  <Route path="posts/new" component={PostsNew} />
+  <Route path="posts/:id" component={PostsShow} />
 
-</Route> // whenever user is at path /, show App component
+</Route>
+// whenever user is at path /, show App component
 )
+
+//reactrouter allows us to use
+// this.props.params.id from above!
+// we can use this in the component as props id=
